@@ -52,17 +52,6 @@ For Animation, Please import  [animate.css](https://animate.style/), I used  ver
     showProgressbar: true
     } );
  
- // with Progress bar on
-  $.notify(
-    {
-      icon: 'fal fa-info-circle',
-      title: 'Header Title',
-      message:  'your message...',
-      
-    },{
-    showProgressbar: true
-    } );
-    
   
 //Update
 var notify = $.notify('<strong>Saving</strong> Do not close this page...', { allow_dismiss: false });
