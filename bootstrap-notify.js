@@ -32,7 +32,7 @@
 			offset: 10,
 			spacing: 10,
 			z_index: 1500,
-			delay: 500000,
+			delay: 5000,
 			timer: 1000,
 			url_target: '_blank',
 			mouse_over: null,
