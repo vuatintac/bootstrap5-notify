@@ -123,14 +123,14 @@ transition: all 0.5 ease-in-out;
 - Initial Release
 
 ## Demo and Documentation
-- [Demo](http://bootstrap-growl.remabledesigns.com/)
-- [Documentation](http://bootstrap-notify.remabledesigns.com/#documentation)
+-  
+-  
 
 NOTE: Some users have reported an issue where the demo/documentation links repsond with only `pageok` in the body. If that occurs for you, try emptying your browser cache or an alternate browser. 
 
 ## Dependencies
 - [jQuery v1.10.2](http://jquery.com/)
-- [Bootstrap v2.0.0 - 3.2.0](http://getbootstrap.com/)
+- [Bootstrap V4 - v5 ](http://getbootstrap.com/)
 
 ## Copyright and License
 The MIT License (MIT)
