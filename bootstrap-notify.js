@@ -55,7 +55,7 @@
 				<div class="progress-bar bg-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
 			</div>
 				<a href="{3}" target="{4}" data-notify="url"></a>
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close"  data-notify="dismiss" aria-label="Close"></button>
 		  </div>`
 		};
 
