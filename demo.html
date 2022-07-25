@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 5 Notify Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"  />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+  </head>
+  <body>
+    <body class="vh-100">
+    <div class="d-flex h-100 flex-column">
+    
+        <!-- Begin page content -->
+        <main class="flex-md-grow-0">
+          <div class="container">
+            <h1 class="mt-5">Bootstrap 5 Notify Demo</h1>
+            <p>This is a simple plugin that turns standard Bootstrap alerts into "Growl-like" notifications.
+            </p><p>
+            Please keep in mind that the master branch may contain bugs or broken code. Please use the link above if you are not able to debug and correct issues in the master branch. Thank you.
+            <p>
+            For icon, you can you user Fontawesome, Bootstrap Icon, or somethings you want...</p>
+            <p>
+            For Animation, Please import animate.css, I used verion: v4</p>
+          
+          <div class="">
+            <button id="btn-simple" type="button" class="mb-2 btn btn-primary">Simple notify</button>
+            <button id="btn-withheader" type="button" class="mb-2 btn btn-secondary">Notify with header</button>
+            <button id="btn-withicon" type="button" class="mb-2 btn btn-success">Notify with icon</button>
+            <button id="btn-withprogressbar" type="button" class="mb-2 btn btn-danger">Notify with progress bar</button>
+            <button id="btn-withcolor" type="button" class="mb-2 btn btn-warning">With Color</button>
+            <button id="btn-withoutdismiss" type="button" class="mb-2 btn btn-info">Without Dismiss</button>
+            <button id="btn-withcallback" type="button" class="mb-2 btn btn-light">With Call Back</button>
+            <button id="btn-withplacement" type="button" class="mb-2 btn btn-dark">With placement Left - Bottom</button>
+         </div>
+         <pre class="my-5">
+            // simple call
+            $.notify("your message..." );
+            
+            
+            // with header
+             $.notify(
+               {
+                 title: 'Header Title',
+                 message:  'your message...',
+               } );
+               
+               
+            // with icon
+             $.notify(
+               {
+                 icon: 'bi bi-exclamation-circle',
+                 title: 'Header Title',
+                 message:  'your message...',
+               } );
+               
+             // with Progress bar on
+             $.notify(
+               {
+                 icon: 'bi bi-exclamation-circle',
+                 title: 'Header Title',
+                 message:  'your message...',
+                 
+               },{
+               showProgressbar: true
+               } );
+            
+             
+           //Update
+           var notify = $.notify('<strong>Saving</strong> Do not close this page...', { allow_dismiss: false });
+           notify.update({ type: 'success', '<strong>Success</strong> Your page has been saved!' });
+           
+           // Turn of Progress bar on
+           $.notify('I have a progress bar', { showProgressbar: true });
+           
+           // Update Progress bar
+           var notify = $.notify('<strong>Saving</strong> Do not close this page...', { allow_dismiss: false });
+           notify.update({ type: 'warning', '<strong>Oops</strong> Something happened. Correcting Now', progress: 20 });
+         </pre>
+          </div>
+        </main>
+        
+        <footer class="mt-auto py-3 bg-light">
+          <div class="container">
+            <span class="text-muted">>Bootstrap 5 Notify Demo</span>
+          </div>
+        </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"  integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="bootstrap-notify.min.js"></script>
+    <script>
+        $("#btn-simple").on("click", function(){
+            $.notify("your message..." );
+        });
+        
+        $("#btn-withheader").on("click", function(){
+            $.notify(
+               {
+                 title: 'Header Title',
+                 message:  'your message...',
+               } );
+        });
+         // with icon
+        $("#btn-withicon").on("click", function(){
+        $.notify(
+               {
+                 icon: 'bi bi-exclamation-circle',
+                 title: 'Header Title',
+                 message:  'your message...',
+               });
+        });
+
+
+               
+        // with Progress bar on
+        $("#btn-withprogressbar").on("click", function(){
+        $.notify(
+        {
+            icon: 'bi bi-exclamation-circle',
+            title: 'Header Title',
+            message:  'Now yor Notify will have Progress bar',
+            
+        },{
+        showProgressbar: true
+        });
+        });
+        
+        // with color
+        $("#btn-withcolor").on("click", function(){
+        $.notify(
+        {
+            icon: 'bi bi-exclamation-circle',
+            title: 'Header Title',
+            message:  'Now yor Notify will have waning/organ color',
+            
+        },{
+            showProgressbar: true,
+            type: "warning"
+        });
+        });
+        
+        // without dismiss
+        $("#btn-withoutdismiss").on("click", function(){
+        $.notify(
+        {
+            icon: 'bi bi-exclamation-circle',
+            title: 'Can not dismiss',
+            message:  'Your Notify now don not have close button, please wait... It will auto close after few seconds..',
+            
+        },{
+            showProgressbar: true,
+            type: "info",
+            allow_dismiss: false,
+        });
+        });
+
+         // with call back
+         $("#btn-withcallback").on("click", function(){
+        $.notify(
+        {
+            icon: 'bi bi-exclamation-circle',
+            title: 'Can not dismiss',
+            message:  'Call back will call, you will go back...',
+            
+        },{
+            showProgressbar: true,
+            type: "light",
+            allow_dismiss: false,
+            onClosed :  function(){
+                window.location.href = "https://github.com/vuatintac/bootstrap5-notify";
+            }
+        });
+        });
+        
+        // with color
+         $("#btn-withplacement").on("click", function(){
+        $.notify(
+        {
+            icon: 'bi bi-exclamation-circle',
+            title: 'Placement',
+            message:  'your message will be shown here',
+            
+        },{
+            showProgressbar: true,
+            type: "dark",
+            allow_dismiss: false,
+            placement: {
+                from: "bottom",
+				align: "left"
+            },
+            animate: {
+				enter: 'animate__animated animate__bounceInUp',
+				exit: 'animate__animated animate__bounceOutDown' 
+			},
+        });
+        });
+            
+
+
+    </script>
+  </div>
+  </body>
+</html>

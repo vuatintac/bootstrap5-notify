@@ -167,7 +167,6 @@
 		},
 		buildNotify: function () {
 			var content = this.settings.content;
-			console.log("content", content);
 			this.$ele = $(String.format(this.settings.template, this.settings.type, content.title, content.message, content.url, content.target));
 			this.$ele.attr('data-notify-position', this.settings.placement.from + '-' + this.settings.placement.align);
 			if (!this.settings.allow_dismiss) {
